@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:meta="https://api.nav.gov.hu/definitions/form_xsd_metaschema/1.0"
+        xmlns:tns="https://soap.api.nav.gov.hu/definitions/model/2.0/53INT/12.0"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        targetNamespace="https://soap.api.nav.gov.hu/definitions/model/2.0/53INT/12.0">
+   <import namespace="https://api.nav.gov.hu/definitions/form_xsd_metaschema/1.0"
+           schemaLocation="form_xsd_metaschema.xsd"/>
+   <element name="Doc_53INT"
+            type="tns:Doc_53INT_Type"
+            meta:metaType="DocMetaType">
+      <annotation>
+         <documentation>53INT külföldi illetőségű előadóművészek személyi jövedelemadó bevallása / 53INT tax return on the personal income tax and social contribution tax of foreign art performers and foreign crew members</documentation>
+      </annotation>
+   </element>
+   <complexType name="Doc_53INT_Type">
+      <annotation>
+         <documentation>A teljes bizonylat szerkezetet leíró típus</documentation>
+      </annotation>
+      <sequence>
+         <element name="Form_53INT"
+                  type="tns:Form_53INT_Type"
+                  minOccurs="1"
+                  maxOccurs="1"
+                  meta:metaType="FormMetaType">
+            <annotation>
+               <documentation>53INT részbizonylat</documentation>
+            </annotation>
+         </element>
+      </sequence>
+   </complexType>
+   <simpleType name="Enum_53INT_0A0001F002A">
+      <annotation>
+         <documentation>Enum értékek </documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="H">
+            <annotation>
+               <documentation>H=adózói javítás (helyesbítés)/correction</documentation>
+            </annotation>
+         </enumeration>
+         <enumeration value="O">
+            <annotation>
+               <documentation>O=önellenőrzés/self check</documentation>
+            </annotation>
+         </enumeration>
+      </restriction>
+   </simpleType>
+   <complexType name="Form_53INT_Type">
+      <annotation>
+         <documentation>A teljes nyomtatvány 53INT részbiztonylatának szerkezetét leíró típus.</documentation>
+      </annotation>
+      <sequence>
+         <element name="Block_120001"
+                  type="tns:Block_53INT_120001_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Azonosító adatok / Identification</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120004"
+                  type="tns:Block_53INT_120004_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Bevallás a személyi jövedelemadóról, szociális hozzájárulási adóról / Tax return on personal income tax, social contribution tax</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120028"
+                  type="tns:Block_53INT_120028_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Önellenőrzés / Self-audit</documentation>
+            </annotation>
+         </element>
+      </sequence>
+   </complexType>
+   <complexType name="Block_53INT_120001_Type">
+      <annotation>
+         <documentation>Azonosító adatok / Identification</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120002"
+                  type="tns:FieldGroup_53INT_120002_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Adózó / magánszemély adatai / Taxpayer data</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120032"
+                  type="tns:FieldGroup_53INT_120032_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Bevallást kitöltő adatai / Countersignatory data</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120003"
+                  type="tns:FieldGroup_53INT_120003_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Bevallás adatai / Tax return data</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_53INT_120004_Type">
+      <annotation>
+         <documentation>Bevallás a személyi jövedelemadóról, szociális hozzájárulási adóról / Tax return on personal income tax, social contribution tax</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120005"
+                  type="tns:FieldGroup_53INT_120005_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Jövedelem és Adó / Income and Tax</documentation>
+            </annotation>
+         </element>
+         <element name="Chain_120008"
+                  type="tns:Chain_53INT_120008_Type"
+                  minOccurs="0"
+                  meta:metaType="ChainMetaType">
+            <annotation>
+               <documentation>A jövedelmet juttató személy(ek) adatai / Data of the payer(s) of the income</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_53INT_120028_Type">
+      <annotation>
+         <documentation>Önellenőrzés / Self-audit</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120029"
+                  type="tns:FieldGroup_53INT_120029_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Ismételt önellenőrzés / Repeated self-check</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120030"
+                  type="tns:FieldGroup_53INT_120030_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Önellenőrzéssel kapcsolatos adatok / Self-monitoring data</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Chain_53INT_120008_Type">
+      <annotation>
+         <documentation>A jövedelmet juttató személy(ek) adatai / Data of the payer(s) of the income</documentation>
+      </annotation>
+      <sequence>
+         <element name="Chain_elem" minOccurs="0" maxOccurs="18">
+            <annotation>
+               <documentation>Lánc ismétlődő elemei</documentation>
+            </annotation>
+            <complexType>
+               <sequence>
+                  <element name="FieldGroup_120009"
+                           type="tns:FieldGroup_53INT_120009_Type"
+                           minOccurs="1"
+                           meta:metaType="FieldGroupMetaType">
+                     <annotation>
+                        <documentation>A jövedelmet juttató személy(ek) adatai / Data of the payer(s) of the income</documentation>
+                     </annotation>
+                  </element>
+               </sequence>
+            </complexType>
+         </element>
+      </sequence>
+   </complexType>
+   <complexType name="FieldGroup_53INT_120002_Type">
+      <annotation>
+         <documentation>Adózó / magánszemély adatai / Taxpayer data</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001E001A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adóazonosító jele (kitöltendő, ha Ön rendelkezik vele) / Tax identification code of the private person (fill it if you have your own code) (adóazonosító)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E002A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Titulus / Title (adózó_titulus)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="20"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E003A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Családi neve / Surname (adózó_családinév)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E004A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Utóneve / Forename (adózó_utónév)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E005A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Születési családi neve / Surname at birth (adózó_szül_családinév)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E006A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Születési utóneve / Forname at birth (adózó_szül_utónév)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E007A"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Születésének időpontja / Date of birth (adozo_szulido)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E008A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Születési helye / Place of birth (adozo_szul_hely)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E009A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Illetősége / Tax residence (adozo_allampolg)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="[^0-9]*[^0-9\s][^0-9]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E010A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Anyja születési családi és utóneve / Mother´s surname and forename (adozo_anyja_neve)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E011A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Hatósági igazolvány típusa / Type of identification document (ig_típusa)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E012A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Száma / Serial number (ig_száma)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_53INT_120032_Type">
+      <annotation>
+         <documentation>Bevallást kitöltő adatai / Countersignatory data</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001H003A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adótanácsadó, adószakértő vagy okleveles adószakértő adatai / Tax advisor, tax counsellor or certified tax counsellor details ¦ Neve / Name (adótanácsadó_név)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001H005A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adótanácsadó, adószakértő vagy okleveles adószakértő adatai / Tax advisor, tax counsellor or certified tax counsellor details ¦ Adóazonosító száma / Tax identification code (adótanácsadó_azonosító)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001H006A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adótanácsadó, adószakértő vagy okleveles adószakértő adatai / Tax advisor, tax counsellor or certified tax counsellor details ¦ Igazolvány száma / Serial number of identity document (adótanácsadó_biz_szám)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001G00542A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Meghatalmazott, képviselő adatai / Data of authorization or representative person ¦ Neve / Name (meghatalmazott_név)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001G00541A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Meghatalmazott, képviselő adatai / Data of authorization or representative person ¦ Adóazonosító száma / Tax identification code (meghatalmazott_azonosító)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001G00544A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Meghatalmazott, pénzügyi képviselő jelölése / Indication of a authorization or a representative person ¦ Állami adó- és vámhatósághoz bejelentett, a bevallás aláírására jogosult állandó meghatalmazás jelölése / Indication of a permanent authorization reported to the NTCA (csatolta_2)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001G00545A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Meghatalmazott, pénzügyi képviselő jelölése / Indication of a authorization or a representative person ¦ Eseti meghatalmazás csatolásának jelölése / Marking the attachment of a case authorization (törvényes_képviselő)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001G00546A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Meghatalmazott, pénzügyi képviselő jelölése / Indication of a authorization or a representative person ¦ Állami adó- és vámhatósághoz bejelentett pénzügyi képviselő jelölése / Indication of a financial representative reported to the NTCA (törvényesképviselő)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001G00547A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Meghatalmazott, pénzügyi képviselő jelölése / Indication of a authorization or a representative person ¦ Állami adó- és vámhatósághoz bejelentett törvényes képviselő jelölése / Indication of a legal representative reported to the NTCA (állandómeghatalmazott)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_53INT_120003_Type">
+      <annotation>
+         <documentation>Bevallás adatai / Tax return data</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001F001A"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Magyarországról történő távozásának tervezett időpontja / Date of planned leave from Hungary (távozás_időpontja)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001F002A"
+                  minOccurs="0"
+                  type="tns:Enum_53INT_0A0001F002A"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adózói javítás, önellenőrzés, pótlás / Taxpayer correction, self-check, replacement ¦ Bevallás jellege / Type of declaration (Fill it if you want to correct your earlier tax return) (bev_jelleg)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001F003A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adózói javítás, önellenőrzés, pótlás / Taxpayer correction, self-check, replacement ¦ A helyesbítéssel/önellenőrzéssel érintett bevallás vonalkódja / Barcode of self-audited/corrected tax return (vonalkód)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E00530A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adózói javítás, önellenőrzés, pótlás / Taxpayer correction, self-check, replacement ¦ Hibásnak minősített bevallás vonalkódja / Bar code of the earlier incorrect declaration (Hib_min_bev_vonalkód)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_53INT_120005_Type">
+      <annotation>
+         <documentation>Jövedelem és Adó / Income and Tax</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0B0001C00535A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>A magánszemély jövedelmének összege / The amount of the private person´s income (A1)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="12"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C00536A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ A magánszemélyt terhelő személyi jövedelemadó / Private person´s personal income tax liability (Adónem kód / Code of tax: 103) (A2)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="12"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C00537A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>A magánszemélyt terhelő szociális hozzájárulási adó / Private person´s social contribution tax (Adónem kód / Code of tax: 258) (A3)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="12"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_53INT_120029_Type">
+      <annotation>
+         <documentation>Ismételt önellenőrzés / Repeated self-check</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0D0001C50003A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jelölje X-szel, ha a bevallása ismételt önellenőrzésnek minősül / Indication of repeated self-audit (Mark this box if you want to correct your earlier self-audited tax return) (ism_onell)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_53INT_120030_Type">
+      <annotation>
+         <documentation>Önellenőrzéssel kapcsolatos adatok / Self-monitoring data</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0D0001D50010A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Személyi jövedelemadó / Personal income tax (Adónemkód / Tax type : 103) ¦ Eredeti adatok / Original data (B1)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="12"/>
+                  <pattern value="[0-9+-]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0D0001D50008A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Személyi jövedelemadó / Personal income tax (Adónemkód / Tax type : 103) ¦ Módosított adatok / Modified data (C1)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="12"/>
+                  <pattern value="[0-9+-]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0D0001D50006A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ Személyi jövedelemadó / Personal income tax (Adónemkód / Tax type : 103) ¦ Adózó terhére mutatkozó különbözet / Difference in debit of tax payer (D1)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="12"/>
+                  <pattern value="[0-9+-]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0D0001D50004A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ Személyi jövedelemadó / Personal income tax (Adónemkód / Tax type : 103) ¦ Adózó javára mutatkozó különbözet / Difference in favour of tax payer (E1)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="12"/>
+                  <pattern value="[0-9+-]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0C0001D50026A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Szociális hozzájárulási adó / Social contribution tax (Adónemkód / Tax type : 258) ¦ Eredeti adatok / Original data (B2)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="12"/>
+                  <pattern value="[0-9+-]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0C0001D50027A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Szociális hozzájárulási adó / Social contribution tax (Adónemkód / Tax type : 258) ¦ Módosított adatok / Modified data (C2)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="12"/>
+                  <pattern value="[0-9+-]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0C0001D50028A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ Szociális hozzájárulási adó / Social contribution tax (Adónemkód / Tax type : 258) ¦ Adózó terhére mutatkozó különbözet / Difference in debit of tax payer (D2)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="12"/>
+                  <pattern value="[0-9+-]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0C0001D50029A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ Szociális hozzájárulási adó / Social contribution tax (Adónemkód / Tax type : 258) ¦ Adózó javára mutatkozó különbözet / Difference in favour of tax payer (E2)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="12"/>
+                  <pattern value="[0-9+-]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0D0001D50002A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Az önellenőrzési pótlék összege / Sum of self-audit surcharge (Adónemkód / Tax type : 215) ¦ Kötelezettség összege / The amount of tax liability (B4)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="12"/>
+                  <pattern value="[0-9+-]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_53INT_120009_Type">
+      <annotation>
+         <documentation>A jövedelmet juttató személy(ek) adatai / Data of the payer(s) of the income</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0B0001D50036A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Név / Name (A5)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001D50037A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Cím (székhely) / Address (seat) (B5)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+</schema>
